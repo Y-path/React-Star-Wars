@@ -1,9 +1,7 @@
-
-
 import './App.css'
 
 import React, { useEffect, useState } from 'react';
-import { getAllStarships } from './services/sw-api'; 
+import { getAllStarships } from './services/sw-api';
 import StarShipCard from './components/StarShipCard';
 
 function App() {
@@ -11,32 +9,39 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getAllStarships()
-    .then(data => {
-      setStarships(data);
-      setLoading(false);
-    })
-    .catch(() => {
-      setLoading(false);
-    });
-}, []);
+    const fetchStarships = async () => {
+      try {
+        const data = await getAllStarships();
 
-if (loading) {
-  return <div>Loading...</div>;
-}
+        setStarships(data);
+
+      } catch (error) {
+        console.error('Error fetching starships:', error);
+
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchStarships();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
 
-  
-return (
-  <div>
-    <h1>Starships</h1>
-    <div className='cards'>
-      {starships.map((starship, index) => (
-        <StarShipCard key={index} starship={starship} />
-      ))}
-      </div> 
-  </div>
-);
+
+  return (
+    <div className='App'>
+      <h1>Starships</h1>
+      <div className='cards'>
+        {starships.map((starship, index) => (
+          <StarShipCard key={index} starship={starship} />
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default App;
