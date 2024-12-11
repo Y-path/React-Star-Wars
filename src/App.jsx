@@ -2,7 +2,7 @@
 
 import './App.css'
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getAllStarships } from './services/sw-api'; 
 import StarShipCard from './components/StarShipCard';
 
@@ -12,7 +12,19 @@ function App() {
 
   useEffect(() => {
     getAllStarships()
-  })
+    .then(data => {
+      setStarships(data);
+      setLoading(false);
+    })
+    .catch(() => {
+      setLoading(false);
+    });
+}, []);
+
+if (loading) {
+  return <div>Loading...</div>;
+}
+
 
   
 return (
