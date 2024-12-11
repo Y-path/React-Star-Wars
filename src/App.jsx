@@ -10,12 +10,19 @@ function App() {
   const [starships, setStarships] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    getAllStarships()
+  })
+
   
 return (
   <div>
     <h1>Starships</h1>
     <div className='cards'>
-      {starships.map((starship, index) </div> 
+      {starships.map((starship, index) => (
+        <StarShipCard key={index} starship={starship} />
+      ))}
+      </div> 
   </div>
 );
 }

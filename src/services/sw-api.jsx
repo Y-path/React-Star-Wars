@@ -1,4 +1,5 @@
-export function getAllStarships() {
+
+export default function getAllStarships() {
     return fetch('https://swapi.dev/api/starships/')  
       .then(response => response.json())
       .then(data => data.results) 
