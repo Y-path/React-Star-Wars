@@ -1,8 +1,39 @@
-# React + Vite
+# SBA 320H (React Web Application ALAB 320H.8.1)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This App uses SWAPI to display Star Wars starships and various related information. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technology Used
+
+JavaScript, HTML, CSS, React
+
+## Installation and Methods
+
+Files can be opened directly from my Github repository which is located here: https://github.com/Y-path/React-Star-Wars.
+
+## Authors
+
+John Nordloh
+
+## License
+
+This project is not licensed.
+
+## Acknowledgements
+
+https://www.w3schools.com/
+
+https://developer.mozilla.org/
+
+https://stackoverflow.com/
+
+https://www.geeksforgeeks.org/
+
+Google
+
+Javascript Crash Course - book
+
+## Project Status
+
+This project is complete and should function as intended.   
