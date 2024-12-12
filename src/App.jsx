@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>Starships</h1>
+      <h1>STARSHIPS</h1>
       <div className='cards'>
         {starships.map((starship, index) => (
           <StarShipCard key={index} starship={starship} />
